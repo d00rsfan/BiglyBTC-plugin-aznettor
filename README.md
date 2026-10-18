@@ -21,3 +21,11 @@ Host cryptographic nonce generation, original cookie/onion-identity file access,
 framing/events/timeouts, process lifecycle/ownership/idle-stop, proxy privacy and
 Qt settings remain required. Production Tor version and dependency packaging are
 unselected. GPL-2.0-or-later; original Copyright2013 Azureus Software, Inc.
+
+## Continuous integration
+
+The workflow is [`.github/workflows/compatibility.yml`](.github/workflows/compatibility.yml). [View runs](https://github.com/d00rsfan/BiglyBTC-plugin-aznettor/actions).
+
+Start it manually from **Actions → Run workflow** (or `gh workflow run compatibility.yml -R d00rsfan/BiglyBTC-plugin-aznettor`). It requires a separately provisioned Linux x64 runner with labels `self-hosted`, `Linux`, `X64`, and `biglybtc-linux`, plus the pinned toolchain and dependencies used by the recipe. Registering the workflow does not provision that runner; a run stays queued until a matching runner is online. It does not run on pull requests.
+
+For future workflow changes, push using this repository's SSH URL (`git@github.com:d00rsfan/BiglyBTC-plugin-aznettor.git`). HTTPS pushes authenticated with an OAuth token require the additional `workflow` scope to add or update workflow files. Viewing public Actions runs does not require that scope.
