@@ -9,7 +9,7 @@
     ".gitignore": "ef2d3a662976b2c26a55d13b98b4be552bc693a37d446e8f29db5ea5b32a3b90",
     "CMakeLists.txt": "85f17c8ac3425c40324ef72bd31b5bc107cc47a4baa3ad98541c6dadd3e96669",
     "COPYING": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6",
-    "README.md": "e8be32635e62252f6720fee47eb0061ec57be557831658dc6be16e272ffb847d",
+    "README.md": "3f7500898fd55db000e19d28f14f0ce923a5893489650df3230da09384ecb520",
     "auth_bounds_test.cpp": "2ad18e071953a5fdb05f370f21b399c8b934c5f755e868bf2fc5a0759446c524",
     "auth_driver.cpp": "4dca8fb217d2063fb14cb3e21beab9ae7feeaf0be102d89000d382d5a6e9873a",
     "fixture_test.py": "60be3a64fd5daba3af946d050df677956eec446edecfae12860e8850f3dbef92",
@@ -20,7 +20,7 @@
     "fixtures/commands.txt": "154413c94b10862e4d6b522b12dee5bcd3a79c5492904fbf6300dd8070f923e6",
     "fixtures/expected.txt": "426d8d9eaac7cb1581ee6b3731efd8406f309d5db58d39f330aeeca85c470520",
     "fixtures/manifest.json": "aaee152fd0b9596843cb1122f731aac276f5fe8a4c30857e8adcb49a66d9a644",
-    ".github/workflows/compatibility.yml": "0af6bc480c64e25f2ddd4745edbe1affd486e5dddac645fa61708b384a8ff90f"
+    ".github/workflows/compatibility.yml": "74a76bfba48b67e871ad78b644543401ccfebb2213db6ffcccba3cd7fe203bf4"
   },
   "ci_activation": {
     "date": "2026-10-18",
@@ -30,5 +30,26 @@
     "runner": "self-hosted Linux X64 biglybtc-linux",
     "mode": "workflow_dispatch",
     "note": "Workflow registered; this manifest does not assert a successful remote run."
+  },
+  "hosted_ci": {
+    "runner": "ubuntu-26.04",
+    "architecture": "amd64",
+    "compiler_package": "16-20260322-1ubuntu1",
+    "lanes": [
+      "gcc-release",
+      "gcc-asan-debug"
+    ],
+    "source_and_fixture_bytes_unchanged": true,
+    "scope": "Hosted offline compatibility only; no release/full-plugin or additional distro qualification",
+    "apt_packages": [
+      "gcc-16=16-20260322-1ubuntu1",
+      "g++-16=16-20260322-1ubuntu1",
+      "libstdc++-16-dev=16-20260322-1ubuntu1",
+      "cmake=4.2.3-2ubuntu2",
+      "ninja-build=1.13.2-1",
+      "python3",
+      "libssl-dev=3.5.5-1ubuntu3.7",
+      "libssl3t64=3.5.5-1ubuntu3.7"
+    ]
   }
 }
